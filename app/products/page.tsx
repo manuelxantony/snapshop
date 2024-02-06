@@ -1,3 +1,3 @@
-export default function Page({ id }: { id: string }) {
+export default function Page() {
   return <div>product</div>;
 }
