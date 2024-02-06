@@ -68,7 +68,7 @@ async function seedProducts(client) {
       })
     );
 
-    console.log(`Seeded ${insertProducts.length} all products.`);
+    console.log(`Seeded all ${insertProducts.length} products.`);
     return { createTable, products: insertProducts };
   } catch (error) {
     console.log("Error seeding all products", error);
