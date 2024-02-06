@@ -7,7 +7,7 @@ export default function HotItems() {
       <div className="container mx-auto">
         <h2 className="text-center">HOT SELLING ITEMS</h2>
         <p className="text-center mb-[30px]">
-          The World's Premium Brands In One Destination
+          The World&apos;s Premium Brands In One Destination
         </p>
         <HotItemsList />
         <Link href="/allItems">
