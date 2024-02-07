@@ -5,7 +5,7 @@ import { HotSellingProduct, Product } from "./definitions";
 //import { formatCurrency } from "./utils";
 
 export async function fetchHotSellingProducts() {
-  noStore(); // to prevent response from being cached
+  noStore(); // to prevent response from being cached by opt out of static rendering
   try {
     console.log("Fetching hot selling products data...");
     const data = await sql<HotSellingProduct>`SELECT * FROM hotsellingproducts`;
@@ -20,7 +20,7 @@ export async function fetchHotSellingProducts() {
 }
 
 export async function fetchProducts() {
-  noStore(); // to prevent response from being cached
+  noStore(); // to prevent response from being cached by opt out of static rendering
   try {
     console.log("Fetching products data...");
     const data = await sql<Product>`SELECT * FROM products`;
@@ -32,7 +32,7 @@ export async function fetchProducts() {
 }
 
 export async function fetchProductViaSlug(slug: string) {
-  noStore(); // to prevent response from being cached
+  noStore(); // to prevent response from being cached by opt out of static rendering
   try {
     console.log(`Fetching product data with slug: ${slug} ...`);
     const data = await sql<Product>`SELECT * FROM products WHERE slug=${slug}`;

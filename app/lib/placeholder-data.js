@@ -1,5 +1,5 @@
 const description =
-  "a state-of-the-art bike combining innovation, performance, and style. With its lightweight carbon fiber frame and advanced suspension system, it effortlessly conquers any terrain. Precision-shifting gears and high-performance disc brakes ensure unparalleled control and responsiveness. Its sleek design and vibrant colors make a bold statement wherever you ride. Whether you're a seasoned cyclist seeking adventure or a casual rider exploring new paths, the Velocity Vortex is your ultimate companion. Experience the thrill of the open road like never before";
+  "A state-of-the-art bike combining innovation, performance, and style. With its lightweight carbon fiber frame and advanced suspension system, it effortlessly conquers any terrain. Precision-shifting gears and high-performance disc brakes ensure unparalleled control and responsiveness. Its sleek design and vibrant colors make a bold statement wherever you ride. Whether you're a seasoned cyclist seeking adventure or a casual rider exploring new paths, the Velocity Vortex is your ultimate companion. Experience the thrill of the open road like never before.";
 
 const products = [
   {

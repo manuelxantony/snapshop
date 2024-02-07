@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { CgEye } from "react-icons/cg";
+import { CgEye, CgShoppingBag } from "react-icons/cg";
 
 import { HotSellingProduct } from "@/app/lib/definitions";
-import AddToChart from "@/app/ui/addToChart";
+import AddToChartButton from "@/app/ui/addToChartButton";
 
 export default function HotSellingProductCard({
   hotSellingProduct,
@@ -33,7 +33,10 @@ export default function HotSellingProductCard({
           className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center gap-[10px] 
         opacity-0 group-hover:opacity-100 transition-all duration-300"
         >
-          <AddToChart product={hotSellingProduct} />
+          <AddToChartButton
+            btnStyle="btn-icon btn-accent"
+            icon={<CgShoppingBag />}
+          />
           <Link href={`/product/${hotSellingProduct.slug}`}>
             <button className="btn-icon btn-primary">
               <CgEye />
