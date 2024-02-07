@@ -5,7 +5,6 @@ import { fetchHotSellingProducts } from "@/app/lib/data";
 
 export default async function HotSellingProducts() {
   const hotSellingProducts = await fetchHotSellingProducts();
-  console.log(hotSellingProducts);
   return (
     <section className="py-24">
       <div className="container mx-auto">

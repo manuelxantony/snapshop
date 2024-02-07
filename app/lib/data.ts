@@ -30,3 +30,18 @@ export async function fetchProducts() {
     throw new Error("Failed to fetch products from database");
   }
 }
+
+export async function fetchProductViaSlug(slug: string) {
+  noStore(); // to prevent response from being cached
+  try {
+    console.log(`Fetching product data with slug: ${slug} ...`);
+    const data = await sql<Product>`SELECT * FROM products WHERE slug=${slug}`;
+    return data.rows;
+  } catch (error) {
+    console.log(
+      `Error while fetching product with slug ${slug} from database: `,
+      error
+    );
+    throw new Error(`Failed to fetch product with slug ${slug} from database`);
+  }
+}
