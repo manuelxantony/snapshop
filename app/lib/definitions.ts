@@ -11,5 +11,5 @@ export type Product = {
   name: string;
   price: number;
   description: string;
-  imageurl: string;
+  image_url: string;
 };

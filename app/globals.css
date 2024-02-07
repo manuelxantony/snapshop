@@ -49,3 +49,14 @@
     @apply bg-white hover:bg-white/90 text-primary transition-all;
   }
 }
+/* slider card style */
+.hot-selling-products-slider .swiper-wrapper {
+  @apply h-[500px];
+}
+
+/* pagination bullets style */
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.siper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  @apply bg-accent;
+}

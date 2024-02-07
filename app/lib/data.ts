@@ -2,7 +2,7 @@ import { sql } from "@vercel/postgres";
 import { unstable_noStore as noStore } from "next/cache";
 
 import { HotSellingProduct, Product } from "./definitions";
-import { formatCurrency } from "./utils";
+//import { formatCurrency } from "./utils";
 
 export async function fetchHotSellingProducts() {
   noStore(); // to prevent response from being cached
