@@ -4,6 +4,7 @@ export type HotSellingProduct = {
   price: number;
   description: string;
   image_url: string;
+  slug: string;
 };
 
 export type Product = {
@@ -12,4 +13,5 @@ export type Product = {
   price: number;
   description: string;
   image_url: string;
+  slug: string;
 };

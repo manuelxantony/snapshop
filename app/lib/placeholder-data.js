@@ -8,6 +8,7 @@ const products = [
     price: 299,
     description: description,
     image_url: "/products/blue.png",
+    slug: "blue-bike-blue-black",
   },
   {
     id: "3958dc9e-742f-4377-85e9-fec4b6a6442a",
@@ -15,6 +16,7 @@ const products = [
     price: 399,
     description: description,
     image_url: "/products/bulls.png",
+    slug: "bulls-bike-red",
   },
 
   {
@@ -23,6 +25,7 @@ const products = [
     price: 259,
     description: description,
     image_url: "/products/mrx.png",
+    slug: "mrx-bike-red-white",
   },
 
   {
@@ -31,6 +34,7 @@ const products = [
     price: 499,
     description: description,
     image_url: "/products/polygon.png",
+    slug: "polygon-bike-blue-white",
   },
 
   {
@@ -39,6 +43,7 @@ const products = [
     price: 299,
     description: description,
     image_url: "/products/scott.png",
+    slug: "scott-bike-black-green",
   },
 
   {
@@ -47,6 +52,7 @@ const products = [
     price: 399,
     description: description,
     image_url: "/products/trek.png",
+    slug: "trek-bike-red-white",
   },
 ];
 
@@ -58,6 +64,7 @@ const hotSellingProducts = [
     price: 299,
     description: description,
     image_url: "/products/blue.png",
+    slug: "blue-bike-blue-black",
   },
   {
     id: "3958dc9e-742f-4377-85e9-fec4b6a6442a",
@@ -65,6 +72,7 @@ const hotSellingProducts = [
     price: 399,
     description: description,
     image_url: "/products/bulls.png",
+    slug: "bulls-bike-red",
   },
 
   {
@@ -73,6 +81,7 @@ const hotSellingProducts = [
     price: 259,
     description: description,
     image_url: "/products/mrx.png",
+    slug: "mrx-bike-red-white",
   },
 
   {
@@ -81,6 +90,7 @@ const hotSellingProducts = [
     price: 499,
     description: description,
     image_url: "/products/polygon.png",
+    slug: "polygon-bike-blue-white",
   },
 
   {
@@ -89,6 +99,7 @@ const hotSellingProducts = [
     price: 299,
     description: description,
     image_url: "/products/scott.png",
+    slug: "scott-bike-black-green",
   },
 
   {
@@ -97,6 +108,7 @@ const hotSellingProducts = [
     price: 399,
     description: description,
     image_url: "/products/trek.png",
+    slug: "trek-bike-red-white",
   },
 ];
 

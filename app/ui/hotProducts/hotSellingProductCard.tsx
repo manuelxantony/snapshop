@@ -34,7 +34,7 @@ export default function HotSellingProductCard({
         opacity-0 group-hover:opacity-100 transition-all duration-300"
         >
           <AddToChart product={hotSellingProduct} />
-          <Link href={`/product/${hotSellingProduct.id}`}>
+          <Link href={`/product/${hotSellingProduct.slug}`}>
             <button className="btn-icon btn-primary">
               <CgEye />
             </button>

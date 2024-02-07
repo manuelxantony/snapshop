@@ -15,8 +15,8 @@ async function seedHotSellingProducts(client) {
         name VARCHAR(255) NOT NUll,
         price INT NOT NULL,
         description TEXT NOT NULL,
-        image_url VARCHAR(255) NOT NULL
-
+        image_url VARCHAR(255) NOT NULL,
+        slug VARCHAR(255) NOT NUll
     );`;
 
     console.log("Created hotsellingproducts table.");
@@ -24,8 +24,8 @@ async function seedHotSellingProducts(client) {
     const insertHotSellingProducts = await Promise.all(
       hotSellingProducts.map((hotSellingProduct) => {
         return client.sql`
-        INSERT INTO hotsellingproducts (id, name, price , description, image_url)
-        VALUES (${hotSellingProduct.id}, ${hotSellingProduct.name}, ${hotSellingProduct.price}, ${hotSellingProduct.description}, ${hotSellingProduct.image_url})
+        INSERT INTO hotsellingproducts (id, name, price , description, image_url, slug)
+        VALUES (${hotSellingProduct.id}, ${hotSellingProduct.name}, ${hotSellingProduct.price}, ${hotSellingProduct.description}, ${hotSellingProduct.image_url}, ${hotSellingProduct.slug})
         ON CONFLICT (id) DO NOTHING;
         `;
       })
@@ -52,8 +52,8 @@ async function seedProducts(client) {
         name VARCHAR(255) NOT NUll,
         price INT NOT NULL,
         description TEXT NOT NULL,
-        image_url VARCHAR(255) NOT NULL
-
+        image_url VARCHAR(255) NOT NULL,
+        slug VARCHAR(255) NOT NUll
     );`;
 
     console.log("Created products table.");
@@ -61,8 +61,8 @@ async function seedProducts(client) {
     const insertProducts = await Promise.all(
       products.map((product) => {
         return client.sql`
-        INSERT INTO products (id, name, price , description, image_url)
-        VALUES (${product.id}, ${product.name}, ${product.price}, ${product.description}, ${product.image_url})
+        INSERT INTO products (id, name, price , description, image_url, slug)
+        VALUES (${product.id}, ${product.name}, ${product.price}, ${product.description}, ${product.image_url}, ${product.slug})
         ON CONFLICT (id) DO NOTHING;
         `;
       })
