@@ -4,11 +4,10 @@ import { ChevronLeft, Clock, PackageCheck, RefreshCw } from "lucide-react";
 
 import { fetchProductViaSlug } from "@/app/lib/data";
 import { Product } from "@/app/lib/definitions";
-import AddToChartButton from "@/app/ui/addToChartButton";
+import AddToChartButton from "@/components/addToChartButton";
 
 export default async function ProductDetails({ params }: any) {
   const product: Product[] = await fetchProductViaSlug(params.slug);
-  console.log(product[0]);
   return (
     <section className="pt-24 pb-32">
       <div className="container mx-auto">

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import HotSellingProductsList from "./hotSellingProductsList";
+import HotSellingProductsList from "@/components/hotProducts/hotSellingProductsList";
 
 import { fetchHotSellingProducts } from "@/app/lib/data";
 

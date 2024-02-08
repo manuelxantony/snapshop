@@ -5,7 +5,7 @@ import Link from "next/link";
 import { CgEye, CgShoppingBag } from "react-icons/cg";
 
 import { HotSellingProduct } from "@/app/lib/definitions";
-import AddToChartButton from "@/app/ui/addToChartButton";
+import AddToChartButton from "@/components/addToChartButton";
 
 export default function HotSellingProductCard({
   hotSellingProduct,
