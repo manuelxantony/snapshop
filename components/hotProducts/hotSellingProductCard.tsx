@@ -5,7 +5,7 @@ import Link from "next/link";
 import { CgEye, CgShoppingBag } from "react-icons/cg";
 
 import { HotSellingProduct } from "@/app/lib/definitions";
-import AddToChartButton from "@/components/addToChartButton";
+import AddToChartButton from "@/components/button/addToChartButton";
 
 export default function HotSellingProductCard({
   hotSellingProduct,
@@ -36,6 +36,7 @@ export default function HotSellingProductCard({
           <AddToChartButton
             btnStyle="btn-icon btn-accent"
             icon={<CgShoppingBag />}
+            product={hotSellingProduct}
           />
           <Link href={`/product/${hotSellingProduct.slug}`}>
             <button className="btn-icon btn-primary">

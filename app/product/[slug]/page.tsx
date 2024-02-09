@@ -4,7 +4,7 @@ import { ChevronLeft, Clock, PackageCheck, RefreshCw } from "lucide-react";
 
 import { fetchProductViaSlug } from "@/app/lib/data";
 import { Product } from "@/app/lib/definitions";
-import AddToChartButton from "@/components/addToChartButton";
+import AddToChartButton from "@/components/button/addToChartButton";
 
 export default async function ProductDetails({ params }: any) {
   const product: Product[] = await fetchProductViaSlug(params.slug);
@@ -35,7 +35,11 @@ export default async function ProductDetails({ params }: any) {
                 <h4>${product[0].price}</h4>
               </div>
               <p>{product[0].description}</p>
-              <AddToChartButton btnStyle="btn btn-accent" text="Add To Chart" />
+              <AddToChartButton
+                btnStyle="btn btn-accent"
+                btnName="Add To Chart"
+                product={product[0]}
+              />
             </div>
             {/* info */}
             <div className="flex flex-col gap-3">
