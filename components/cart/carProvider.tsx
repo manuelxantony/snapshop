@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { CartProvider as CProvider } from "use-shopping-cart";
+import { CartProvider as CProvider } from 'use-shopping-cart';
 
 export default function CartProvider({ children }: { children: any }) {
   return (
     <CProvider
       mode="payment"
       cartMode="client-only"
-      stripe=""
+      stripe={process.env.STRIP_PUBLIC_KEY!}
       successUrl="sucess"
       cancelUrl="error"
       language="en-US"

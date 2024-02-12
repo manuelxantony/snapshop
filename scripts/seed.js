@@ -1,9 +1,9 @@
-const { db } = require("@vercel/postgres");
+const { db } = require('@vercel/postgres');
 
 const {
   hotSellingProducts,
   products,
-} = require("../app/lib/placeholder-data.js");
+} = require('../app/lib/placeholder-data.js');
 
 async function seedHotSellingProducts(client) {
   try {
@@ -16,16 +16,18 @@ async function seedHotSellingProducts(client) {
         price INT NOT NULL,
         description TEXT NOT NULL,
         image_url VARCHAR(255) NOT NULL,
-        slug VARCHAR(255) NOT NUll
+        slug VARCHAR(255) NOT NUll,
+        strip_id VARCHAR(50) NOT NUll
     );`;
 
-    console.log("Created hotsellingproducts table.");
+    console.log('Created hotsellingproducts table.');
 
     const insertHotSellingProducts = await Promise.all(
       hotSellingProducts.map((hotSellingProduct) => {
+        console.log(hotSellingProduct.strip_id);
         return client.sql`
-        INSERT INTO hotsellingproducts (id, name, price , description, image_url, slug)
-        VALUES (${hotSellingProduct.id}, ${hotSellingProduct.name}, ${hotSellingProduct.price}, ${hotSellingProduct.description}, ${hotSellingProduct.image_url}, ${hotSellingProduct.slug})
+        INSERT INTO hotsellingproducts (id, name, price , description, image_url, slug, strip_id)
+        VALUES (${hotSellingProduct.id}, ${hotSellingProduct.name}, ${hotSellingProduct.price}, ${hotSellingProduct.description}, ${hotSellingProduct.image_url}, ${hotSellingProduct.slug}, ${hotSellingProduct.strip_id})
         ON CONFLICT (id) DO NOTHING;
         `;
       })
@@ -37,7 +39,7 @@ async function seedHotSellingProducts(client) {
 
     return { createTable, hotSellingProducts: insertHotSellingProducts };
   } catch (error) {
-    console.log("Error seeding hot selling items", error);
+    console.log('Error seeding hot selling items', error);
     throw error;
   }
 }
@@ -53,16 +55,17 @@ async function seedProducts(client) {
         price INT NOT NULL,
         description TEXT NOT NULL,
         image_url VARCHAR(255) NOT NULL,
-        slug VARCHAR(255) NOT NUll
+        slug VARCHAR(255) NOT NUll,
+        strip_id VARCHAR(50) NOT NUll
     );`;
 
-    console.log("Created products table.");
+    console.log('Created products table.');
 
     const insertProducts = await Promise.all(
       products.map((product) => {
         return client.sql`
-        INSERT INTO products (id, name, price , description, image_url, slug)
-        VALUES (${product.id}, ${product.name}, ${product.price}, ${product.description}, ${product.image_url}, ${product.slug})
+        INSERT INTO products (id, name, price , description, image_url, slug, strip_id)
+        VALUES (${product.id}, ${product.name}, ${product.price}, ${product.description}, ${product.image_url}, ${product.slug}, ${product.strip_id})
         ON CONFLICT (id) DO NOTHING;
         `;
       })
@@ -71,7 +74,7 @@ async function seedProducts(client) {
     console.log(`Seeded all ${insertProducts.length} products.`);
     return { createTable, products: insertProducts };
   } catch (error) {
-    console.log("Error seeding all products", error);
+    console.log('Error seeding all products', error);
     throw error;
   }
 }
@@ -87,5 +90,5 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error("An error occured while attempting to seed the databse:", err);
+  console.error('An error occured while attempting to seed the databse:', err);
 });

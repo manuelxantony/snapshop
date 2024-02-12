@@ -1,20 +1,21 @@
-import type { Metadata } from "next";
-import { Rajdhani } from "next/font/google";
+import type { Metadata } from 'next';
+import { Rajdhani } from 'next/font/google';
 
-import "./globals.css";
-import Header from "@/components/header";
-import Footer from "@/components/footer";
-import CartProvider from "@/components/cart/carProvider";
+import './globals.css';
+import Header from '@/components/header';
+import Footer from '@/components/footer';
+import CartProvider from '@/components/cart/carProvider';
+import { Toaster } from '@/components/ui/toaster';
 
 const rajdhani = Rajdhani({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-rajdhani",
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-rajdhani',
 });
 
 export const metadata: Metadata = {
-  title: "SnapShop",
-  description: "Your Quickest Shopping Destination",
+  title: 'SnapShop',
+  description: 'Your Quickest Shopping Destination',
 };
 
 export default function RootLayout({
@@ -28,6 +29,7 @@ export default function RootLayout({
         <CartProvider>
           <Header />
           {children}
+          <Toaster />
           <Footer />
         </CartProvider>
       </body>

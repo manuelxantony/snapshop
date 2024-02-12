@@ -5,6 +5,7 @@ export type HotSellingProduct = {
   description: string;
   image_url: string;
   slug: string;
+  strip_id: string;
 };
 
 export type Product = {
@@ -14,4 +15,5 @@ export type Product = {
   description: string;
   image_url: string;
   slug: string;
+  strip_id: string;
 };

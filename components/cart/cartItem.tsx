@@ -1,6 +1,6 @@
-import Image from "next/image";
-import { FaMinus, FaPlus, FaX } from "react-icons/fa6";
-import { useShoppingCart } from "use-shopping-cart";
+import Image from 'next/image';
+import { FaMinus, FaPlus, FaX } from 'react-icons/fa6';
+import { useShoppingCart } from 'use-shopping-cart';
 
 export default function CartItem({ item }: { item: any }) {
   const { removeItem, incrementItem, decrementItem } = useShoppingCart();
@@ -26,7 +26,7 @@ export default function CartItem({ item }: { item: any }) {
               removeItem(item.id);
             }}
           >
-            <FaX className="text-sm" />
+            <FaX className="text-sm border-2 border-black" />
           </button>
         </div>
         {/* -, + button and total price */}

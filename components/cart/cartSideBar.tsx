@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
-} from "@/components/ui/sheet";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { useShoppingCart } from "use-shopping-cart";
+} from '@/components/ui/sheet';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { useShoppingCart } from 'use-shopping-cart';
 
-import CartItem from "./cartItem";
-import CheckoutBtn from "../button/checkoutButton";
+import CartItem from './cartItem';
+import CheckoutBtn from '../button/checkoutButton';
 
 export default function CartSideBar() {
   const {
@@ -21,7 +21,7 @@ export default function CartSideBar() {
     totalPrice,
   } = useShoppingCart();
   return (
-    <Sheet open={true} onOpenChange={() => handleCartClick()}>
+    <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
       <SheetContent>
         <SheetHeader>
           <SheetTitle className="mb-12">My Cart({cartCount})</SheetTitle>
