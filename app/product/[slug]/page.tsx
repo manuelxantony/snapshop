@@ -1,10 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
-import { ChevronLeft, Clock, PackageCheck, RefreshCw } from "lucide-react";
+import Image from 'next/image';
+import Link from 'next/link';
+import { ChevronLeft, Clock, PackageCheck, RefreshCw } from 'lucide-react';
 
-import { fetchProductViaSlug } from "@/app/lib/data";
-import { Product } from "@/app/lib/definitions";
-import AddToChartButton from "@/components/button/addToChartButton";
+import { fetchProductViaSlug } from '@/app/lib/data';
+import { Product } from '@/app/lib/definitions';
+import AddToChartButton from '@/components/button/addToChartButton';
 
 export default async function ProductDetails({ params }: any) {
   const product: Product[] = await fetchProductViaSlug(params.slug);

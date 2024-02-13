@@ -1,10 +1,10 @@
-import { HotSellingProduct, Product } from "./definitions";
-import { useShoppingCart } from "use-shopping-cart";
+import { HotSellingProduct, Product } from './definitions';
+import { useShoppingCart } from 'use-shopping-cart';
 
 export const formatCurrency = (amount: number) => {
-  return amount.toLocaleString("en-US", {
-    style: "currency",
-    currency: "USD",
+  return amount.toLocaleString('en-US', {
+    style: 'currency',
+    currency: 'USD',
   });
 };
 
@@ -13,11 +13,11 @@ export const convertProductToCartProduct = (
   product: Product | HotSellingProduct
 ) => {
   return {
-    id: product.id,
     name: product.name,
     description: product.description,
     price: product.price,
     image: product.image_url,
-    currency: "USD",
+    currency: 'USD',
+    price_id: product.strip_id,
   };
 };

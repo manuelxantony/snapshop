@@ -22,9 +22,9 @@ export default function AddToChartButton({
 
   const addProductToCart = () => {
     const cartProduct = convertProductToCartProduct(product);
+
     addItem(cartProduct);
     toast({ title: `${product.name} added to the cart` });
-    // setTimeout(ToastClose(), 1000);
   };
 
   return (

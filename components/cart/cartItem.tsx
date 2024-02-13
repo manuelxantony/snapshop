@@ -3,6 +3,7 @@ import { FaMinus, FaPlus, FaX } from 'react-icons/fa6';
 import { useShoppingCart } from 'use-shopping-cart';
 
 export default function CartItem({ item }: { item: any }) {
+  console.log(item.image, '------------');
   const { removeItem, incrementItem, decrementItem } = useShoppingCart();
   return (
     <div className="flex w-full justify-between mb-4 items-center h-[120px] border-b">
@@ -26,7 +27,7 @@ export default function CartItem({ item }: { item: any }) {
               removeItem(item.id);
             }}
           >
-            <FaX className="text-sm border-2 border-black" />
+            <FaX className="text-sm  text-black/50" />
           </button>
         </div>
         {/* -, + button and total price */}

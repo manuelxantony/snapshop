@@ -4,7 +4,7 @@ import { Rajdhani } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import CartProvider from '@/components/cart/carProvider';
+import CartProvider from '@/components/cart/cartProvider';
 import { Toaster } from '@/components/ui/toaster';
 
 const rajdhani = Rajdhani({

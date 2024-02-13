@@ -1,7 +1,7 @@
-import Link from "next/link";
-import HotSellingProductsList from "@/components/hotProducts/hotSellingProductsList";
+import Link from 'next/link';
+import HotSellingProductsList from '@/components/hotProducts/hotSellingProductsList';
 
-import { fetchHotSellingProducts } from "@/app/lib/data";
+import { fetchHotSellingProducts } from '@/app/lib/data';
 
 export default async function HotSellingProducts() {
   const hotSellingProducts = await fetchHotSellingProducts();

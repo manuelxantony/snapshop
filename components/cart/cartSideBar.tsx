@@ -9,8 +9,8 @@ import {
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { useShoppingCart } from 'use-shopping-cart';
 
-import CartItem from './cartItem';
-import CheckoutBtn from '../button/checkoutButton';
+import CartItem from '@/components/cart/cartItem';
+import CheckoutBtn from '@/components/button/checkoutButton';
 
 export default function CartSideBar() {
   const {
@@ -40,7 +40,7 @@ export default function CartSideBar() {
             </ScrollArea>
           )}
         </>
-        {cartCount > 0 && (
+        {cartCount! > 0 && (
           <div>
             <div className="flex justify-between mb-4">
               <div className="font-semibold uppercase">Total</div>
