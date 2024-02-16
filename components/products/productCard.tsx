@@ -1,17 +1,13 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { CgEye, CgShoppingBag } from "react-icons/cg";
+import Image from 'next/image';
+import Link from 'next/link';
+import { CgEye, CgShoppingBag } from 'react-icons/cg';
 
-import { HotSellingProduct } from "@/app/lib/definitions";
-import AddToChartButton from "@/components/button/addToChartButton";
+import { Product } from '@/app/lib/definitions';
+import AddToChartButton from '@/components/button/addToChartButton';
 
-export default function HotSellingProductCard({
-  hotSellingProduct,
-}: {
-  hotSellingProduct: HotSellingProduct;
-}) {
+export default function ProductCard({ product }: { product: Product }) {
   return (
     <div className="group">
       <div className="border h-[328px] mb-5 p-4 overflow-hidden relative">
@@ -23,10 +19,10 @@ export default function HotSellingProductCard({
             Hot Selling
           </div>
           <Image
-            src={hotSellingProduct.image_url}
+            src={product.image_url}
             width={240}
             height={147}
-            alt={`${hotSellingProduct.name} image`}
+            alt={`${product.name} image`}
           />
         </div>
         <div
@@ -36,17 +32,20 @@ export default function HotSellingProductCard({
           <AddToChartButton
             btnStyle="btn-icon btn-accent"
             icon={<CgShoppingBag />}
-            product={hotSellingProduct}
+            product={product}
           />
-          <Link href={`/product/${hotSellingProduct.slug}`}>
+          <Link href={`/product/${product.slug}`}>
             <button className="btn-icon btn-primary">
               <CgEye />
             </button>
           </Link>
         </div>
       </div>
-      <h5>{hotSellingProduct.name}</h5>
-      <h4 className="text-accent">${hotSellingProduct.price}</h4>
+      <div className="text-[13px] text-black/50 mb-2 uppercase font-bold">
+        {product.category}
+      </div>
+      <h5>{product.name}</h5>
+      <h4 className="text-accent">${product.price}</h4>
     </div>
   );
 }

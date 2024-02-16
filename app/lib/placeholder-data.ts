@@ -5,6 +5,7 @@ const products = [
   {
     id: '3958dc9e-712f-4377-85e9-fec4b6a6442a',
     name: 'blue bike',
+    category: 'road bike',
     price: 299,
     description: description,
     image_url: '/products/blue.png',
@@ -14,6 +15,7 @@ const products = [
   {
     id: '3958dc9e-742f-4377-85e9-fec4b6a6442a',
     name: 'bulls bike',
+    category: 'road bike',
     price: 399,
     description: description,
     image_url: '/products/bulls.png',
@@ -24,6 +26,7 @@ const products = [
   {
     id: '3958dc9e-737f-4377-85e9-fec4b6a6442a',
     name: 'mrx bike',
+    category: 'road bike',
     price: 259,
     description: description,
     image_url: '/products/mrx.png',
@@ -34,6 +37,7 @@ const products = [
   {
     id: '50ca3e18-62cd-11ee-8c99-0242ac120002',
     name: 'polygon bike',
+    category: 'professional bike',
     price: 499,
     description: description,
     image_url: '/products/polygon.png',
@@ -44,6 +48,7 @@ const products = [
   {
     id: '3958dc9e-787f-4377-85e9-fec4b6a6442a',
     name: 'scott bike',
+    category: 'extreme bike',
     price: 299,
     description: description,
     image_url: '/products/scott.png',
@@ -54,6 +59,7 @@ const products = [
   {
     id: '76d65c26-f784-44a2-ac19-586678f7c2f2',
     name: 'trek bike',
+    category: 'professional bike',
     price: 399,
     description: description,
     image_url: '/products/trek.png',
@@ -67,6 +73,7 @@ const hotSellingProducts = [
   {
     id: '3958dc9e-712f-4377-85e9-fec4b6a6442a',
     name: 'blue bike',
+    category: 'road bike',
     price: 299,
     description: description,
     image_url: '/products/blue.png',
@@ -76,6 +83,7 @@ const hotSellingProducts = [
   {
     id: '3958dc9e-742f-4377-85e9-fec4b6a6442a',
     name: 'bulls bike',
+    category: 'road bike',
     price: 399,
     description: description,
     image_url: '/products/bulls.png',
@@ -86,6 +94,7 @@ const hotSellingProducts = [
   {
     id: '3958dc9e-737f-4377-85e9-fec4b6a6442a',
     name: 'mrx bike',
+    category: 'road bike',
     price: 259,
     description: description,
     image_url: '/products/mrx.png',
@@ -96,26 +105,17 @@ const hotSellingProducts = [
   {
     id: '50ca3e18-62cd-11ee-8c99-0242ac120002',
     name: 'polygon bike',
+    category: 'professional bike',
     price: 499,
     description: description,
     image_url: '/products/polygon.png',
     slug: 'polygon-bike-blue-white',
     strip_id: '',
   },
-
-  {
-    id: '3958dc9e-787f-4377-85e9-fec4b6a6442a',
-    name: 'scott bike',
-    price: 299,
-    description: description,
-    image_url: '/products/scott.png',
-    slug: 'scott-bike-black-green',
-    strip_id: '',
-  },
-
   {
     id: '76d65c26-f784-44a2-ac19-586678f7c2f2',
     name: 'trek bike',
+    category: 'professional bike',
     price: 399,
     description: description,
     image_url: '/products/trek.png',

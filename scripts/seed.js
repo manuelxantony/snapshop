@@ -3,7 +3,7 @@ const { db } = require('@vercel/postgres');
 const {
   hotSellingProducts,
   products,
-} = require('../app/lib/placeholder-data.js');
+} = require('../app/lib/placeholder-data.ts');
 
 async function seedHotSellingProducts(client) {
   try {
@@ -13,6 +13,7 @@ async function seedHotSellingProducts(client) {
     CREATE TABLE IF NOT EXISTS hotsellingproducts (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
         name VARCHAR(255) NOT NUll,
+        category VARCHAR(255) NOT NUll,
         price INT NOT NULL,
         description TEXT NOT NULL,
         image_url VARCHAR(255) NOT NULL,
@@ -24,10 +25,9 @@ async function seedHotSellingProducts(client) {
 
     const insertHotSellingProducts = await Promise.all(
       hotSellingProducts.map((hotSellingProduct) => {
-        console.log(hotSellingProduct.strip_id);
         return client.sql`
-        INSERT INTO hotsellingproducts (id, name, price , description, image_url, slug, strip_id)
-        VALUES (${hotSellingProduct.id}, ${hotSellingProduct.name}, ${hotSellingProduct.price}, ${hotSellingProduct.description}, ${hotSellingProduct.image_url}, ${hotSellingProduct.slug}, ${hotSellingProduct.strip_id})
+        INSERT INTO hotsellingproducts (id, name, category, price , description, image_url, slug, strip_id)
+        VALUES (${hotSellingProduct.id}, ${hotSellingProduct.name}, ${hotSellingProduct.category}, ${hotSellingProduct.price}, ${hotSellingProduct.description}, ${hotSellingProduct.image_url}, ${hotSellingProduct.slug}, ${hotSellingProduct.strip_id})
         ON CONFLICT (id) DO NOTHING;
         `;
       })
@@ -52,6 +52,7 @@ async function seedProducts(client) {
     CREATE TABLE IF NOT EXISTS products (
         id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
         name VARCHAR(255) NOT NUll,
+        category VARCHAR(255) NOT NUll,
         price INT NOT NULL,
         description TEXT NOT NULL,
         image_url VARCHAR(255) NOT NULL,
@@ -64,8 +65,8 @@ async function seedProducts(client) {
     const insertProducts = await Promise.all(
       products.map((product) => {
         return client.sql`
-        INSERT INTO products (id, name, price , description, image_url, slug, strip_id)
-        VALUES (${product.id}, ${product.name}, ${product.price}, ${product.description}, ${product.image_url}, ${product.slug}, ${product.strip_id})
+        INSERT INTO products (id, name, category, price , description, image_url, slug, strip_id)
+        VALUES (${product.id}, ${product.name}, ${product.category}, ${product.price}, ${product.description}, ${product.image_url}, ${product.slug}, ${product.strip_id})
         ON CONFLICT (id) DO NOTHING;
         `;
       })

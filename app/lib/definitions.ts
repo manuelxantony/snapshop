@@ -1,6 +1,7 @@
 export type HotSellingProduct = {
   id: string;
   name: string;
+  category: string;
   price: number;
   description: string;
   image_url: string;
@@ -11,6 +12,7 @@ export type HotSellingProduct = {
 export type Product = {
   id: string;
   name: string;
+  category: string;
   price: number;
   description: string;
   image_url: string;

@@ -1,14 +1,12 @@
-"use client";
+'use client';
 
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
 
-import { HotSellingProduct } from "@/app/lib/definitions";
-import HotSellingProductCard from "./hotSellingProductCard";
+import { HotSellingProduct } from '@/app/lib/definitions';
+import ProductCard from '@/components/products/productCard';
 
 export default function HotSellingProductsList({
   hotSellingProducts,
@@ -31,11 +29,9 @@ export default function HotSellingProductsList({
         className="hot-selling-products-slider mb-8"
       >
         {hotSellingProducts.map((hotSellingProduct) => (
-          <option key={hotSellingProduct.id}>
-            <SwiperSlide>
-              <HotSellingProductCard hotSellingProduct={hotSellingProduct} />
-            </SwiperSlide>
-          </option>
+          <SwiperSlide key={hotSellingProduct.id}>
+            <ProductCard product={hotSellingProduct} />
+          </SwiperSlide>
         ))}
       </Swiper>
     </div>
